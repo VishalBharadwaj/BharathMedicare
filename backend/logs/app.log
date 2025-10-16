@@ -365,3 +365,237 @@
 2025-10-16 18:08:32,638 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:08:32] "OPTIONS /api/auth/login HTTP/1.1" 200 -
 2025-10-16 18:08:33,315 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e736112bab290984afaf by user 68f0e736112bab290984afaf
 2025-10-16 18:08:33,316 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:08:33] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 18:49:09,730 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 18:49:09,731 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 18:49:09,731 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 18:49:09,731 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 18:49:09,752 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 18:49:09,753 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 18:49:09,755 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 18:49:10,402 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 18:49:10,403 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 18:49:10,403 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 18:49:10,403 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 18:49:10,412 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 18:49:10,415 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 18:49:33,427 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:49:33] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 18:49:34,081 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 18:49:34,083 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:49:34] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 18:49:35,135 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:49:35] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 18:49:35,458 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:49:35] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 18:52:15,614 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:52:15] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 18:52:16,249 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 18:52:16,250 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:52:16] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 18:52:17,300 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:52:17] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 18:52:17,620 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:52:17] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 18:53:36,121 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\blueprints\\patients.py', reloading
+2025-10-16 18:53:36,673 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 18:53:37,426 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 18:53:37,426 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 18:53:37,426 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 18:53:37,427 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 18:53:37,434 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 18:53:37,439 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 18:53:50,173 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 18:53:50,520 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 18:53:51,608 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 18:53:51,608 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 18:53:51,608 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 18:53:51,609 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 18:53:51,625 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 18:53:51,632 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 18:54:07,372 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\blueprints\\auth.py', reloading
+2025-10-16 18:54:07,767 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 18:54:08,352 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 18:54:08,353 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 18:54:08,353 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 18:54:08,353 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 18:54:08,361 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 18:54:08,364 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 18:56:08,201 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\models\\database.py', reloading
+2025-10-16 18:56:08,895 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 18:56:09,693 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 18:56:09,693 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 18:56:09,693 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 18:56:09,694 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 18:56:09,703 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 18:56:09,708 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 18:56:16,097 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\blueprints\\patients.py', reloading
+2025-10-16 18:56:16,351 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 18:56:16,991 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 18:56:16,991 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 18:56:16,991 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 18:56:16,991 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 18:56:17,000 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 18:56:17,003 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 18:57:05,133 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:57:05] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 18:57:05,678 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 18:57:05,679 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:57:05] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 18:57:06,726 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:57:06] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 18:57:07,034 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 18:57:07] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:00:23,937 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:00:23] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:00:24,463 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:00:24,464 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:00:24] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:00:25,510 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:00:25] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:00:25,825 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:00:25] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:01:08,539 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 19:01:09,113 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:01:10,093 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:01:10,093 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:01:10,093 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:01:10,094 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:01:10,106 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:01:10,111 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:01:16,508 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 19:01:16,686 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:01:17,551 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:01:17,552 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:01:17,552 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:01:17,552 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:01:17,564 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:01:17,569 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:03:17,158 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:03:17] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:03:17,701 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:03:17,702 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:03:17] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:03:18,758 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:03:18] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:03:19,076 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:03:19] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:04:13,112 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 19:04:13,714 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:04:14,432 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:04:14,433 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:04:14,433 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:04:14,433 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:04:14,441 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:04:14,444 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:04:20,715 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 19:04:21,053 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:04:21,626 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:04:21,626 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:04:21,627 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:04:21,627 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:04:21,634 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:04:21,637 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:04:30,977 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 19:04:31,334 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:04:31,919 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:04:31,919 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:04:31,919 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:04:31,920 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:04:31,927 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:04:31,930 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:05:37,109 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:05:37] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:05:37,660 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:05:37,660 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:05:37] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:05:38,703 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:05:38] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:05:39,022 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:05:39] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:07:32,190 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\test_server.py', reloading
+2025-10-16 19:07:32,604 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:07:33,260 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:07:33,261 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:07:33,261 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:07:33,261 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:07:33,269 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:07:33,273 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:08:00,952 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:08:00,952 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:08:00,952 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:08:00,952 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:08:00,965 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 19:08:00,965 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 19:08:00,967 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:08:01,597 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:08:01,597 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:08:01,598 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:08:01,598 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:08:01,606 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:08:01,609 - werkzeug - INFO -  * Debugger PIN: 421-929-213
+2025-10-16 19:08:12,594 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:08:12] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:08:13,125 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:08:13,125 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:08:13] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:08:14,175 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:08:14] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:08:14,493 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:08:14] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:09:00,853 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:09:00,853 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:09:00,853 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:09:00,853 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:09:00,867 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 19:09:00,867 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 19:09:00,869 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:09:01,475 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:09:01,476 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:09:01,476 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:09:01,476 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:09:01,484 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:09:01,488 - werkzeug - INFO -  * Debugger PIN: 421-929-213
+2025-10-16 19:09:44,514 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:09:44,514 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:09:44,514 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:09:44,515 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:09:44,531 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 19:09:44,531 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 19:09:44,533 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:09:45,131 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:09:45,131 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:09:45,131 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:09:45,131 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:09:45,140 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:09:45,143 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:10:09,858 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:10:09] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:10:10,404 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:10:10,405 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:10:10] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:10:11,513 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:10:11] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:10:11,834 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:10:11] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:10:55,543 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:10:55] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:10:56,151 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:10:56,152 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:10:56] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:10:57,195 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:10:57] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:10:57,516 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:10:57] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:11:20,262 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 19:11:20,365 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 19:11:20,652 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:11:20,776 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:11:21,253 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:11:21,254 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:11:21,254 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:11:21,254 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:11:21,263 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:11:21,266 - werkzeug - INFO -  * Debugger PIN: 421-929-213
+2025-10-16 19:11:21,372 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:11:21,372 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:11:21,372 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:11:21,372 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:11:21,381 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:11:21,384 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:12:11,780 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:12:11] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:12:12,337 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:12:12,338 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:12:12] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:12:15,595 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:12:15] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:12:15,856 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:12:15] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:16:25,914 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:16:25,914 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:16:25,915 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:16:25,915 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:16:25,928 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 19:16:25,929 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 19:16:25,930 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:16:26,542 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:16:26,542 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:16:26,542 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:16:26,542 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:16:26,550 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:16:26,555 - werkzeug - INFO -  * Debugger PIN: 421-929-213

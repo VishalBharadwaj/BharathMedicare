@@ -77,6 +77,14 @@ class AuthManager {
     }
 
     /**
+     * Get access token (alias for compatibility)
+     * @returns {string|null} Access token or null if not found
+     */
+    getToken() {
+        return this.getAccessToken();
+    }
+
+    /**
      * Login user with email and password
      * @param {string} email - User email
      * @param {string} password - User password

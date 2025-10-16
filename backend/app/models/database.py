@@ -66,10 +66,10 @@ class DatabaseManager:
             raise
 
     def find_many(self, collection: str, filter_dict: dict, 
-                  limit: int = None, skip: int = None, sort: list = None) -> list:
+                  limit: int = None, skip: int = None, sort: list = None, projection: dict = None) -> list:
         """Find multiple documents with pagination"""
         try:
-            cursor = self.db[collection].find(filter_dict)
+            cursor = self.db[collection].find(filter_dict, projection)
             if sort:
                 cursor = cursor.sort(sort)
             if skip:

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navigation</title>
+    <style>
+        .content-section {
+            display: none;
+            padding: 20px;
+            border: 2px solid #ccc;
+            margin: 10px;
+        }
+        .content-section.active {
+            display: block;
+            border-color: green;
+        }
+        .nav-link {
+            display: block;
+            padding: 10px;
+            margin: 5px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-link.active {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Navigation Test</h1>
+    
+    <div style="display: flex;">
+        <div style="width: 200px;">
+            <a href="#" class="nav-link active" data-section="dashboard">Dashboard</a>
+            <a href="#" class="nav-link" data-section="records">My Records</a>
+            <a href="#" class="nav-link" data-section="upload">Upload</a>
+            <a href="#" class="nav-link" data-section="access">Access Control</a>
+            <a href="#" class="nav-link" data-section="profile">Profile</a>
+        </div>
+        
+        <div style="flex: 1;">
+            <section id="dashboard" class="content-section active">
+                <h2>Dashboard Section</h2>
+                <p>This is the dashboard content.</p>
+            </section>
+            
+            <section id="records" class="content-section">
+                <h2>My Records Section</h2>
+                <p>This is the records content.</p>
+            </section>
+            
+            <section id="upload" class="content-section">
+                <h2>Upload Section</h2>
+                <p>This is the upload content.</p>
+            </section>
+            
+            <section id="access" class="content-section">
+                <h2>Access Control Section</h2>
+                <p>This is the access control content.</p>
+            </section>
+            
+            <section id="profile" class="content-section">
+                <h2>Profile Section</h2>
+                <p>This is the profile content.</p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Simple navigation test
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = link.getAttribute('data-section');
+                console.log('Clicked:', section);
+                
+                // Hide all sections
+                document.querySelectorAll('.content-section').forEach(s => {
+                    s.classList.remove('active');
+                });
+                
+                // Show target section
+                const target = document.getElementById(section);
+                if (target) {
+                    target.classList.add('active');
+                    console.log('Showing:', section);
+                }
+                
+                // Update nav
+                document.querySelectorAll('.nav-link').forEach(l => {
+                    l.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+        
+        console.log('Navigation test ready');
+    </script>
+</body>
+</html>

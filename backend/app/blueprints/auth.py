@@ -267,3 +267,45 @@ def validate_token():
                 'requestId': str(uuid.uuid4())
             }
         }), 500
+
+@auth_bp.route('/me', methods=['GET'])
+@require_auth
+def get_current_user_info():
+    """Get current user information"""
+    try:
+        current_user_id = get_jwt_identity()
+        user = db_manager.find_one('users', {'_id': ObjectId(current_user_id)})
+        
+        if not user or not user.get('is_active'):
+            return jsonify({
+                'error': {
+                    'code': 'USER_NOT_FOUND',
+                    'message': 'User not found or inactive',
+                    'timestamp': datetime.utcnow().isoformat(),
+                    'requestId': str(uuid.uuid4())
+                }
+            }), 404
+        
+        return jsonify({
+            'id': str(user['_id']),
+            'email': user['email'],
+            'role': user['role'],
+            'first_name': user['first_name'],
+            'last_name': user['last_name'],
+            'name': f"{user['first_name']} {user['last_name']}",
+            'is_active': user['is_active'],
+            'mfa_enabled': user.get('mfa_enabled', False),
+            'last_login': user.get('last_login').isoformat() if user.get('last_login') else None,
+            'created_at': user['created_at'].isoformat(),
+            'timestamp': datetime.utcnow().isoformat()
+        }), 200
+        
+    except Exception as e:
+        return jsonify({
+            'error': {
+                'code': 'USER_INFO_ERROR',
+                'message': str(e),
+                'timestamp': datetime.utcnow().isoformat(),
+                'requestId': str(uuid.uuid4())
+            }
+        }), 500

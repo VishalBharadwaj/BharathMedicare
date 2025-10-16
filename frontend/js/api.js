@@ -4,7 +4,7 @@
 
 class APIManager {
     constructor() {
-        this.baseURL = 'http://localhost:5000/api';
+        this.baseURL = window.API_CONFIG ? window.API_CONFIG.BASE_URL : 'http://localhost:5000';
         this.defaultHeaders = {
             'Content-Type': 'application/json',
         };
@@ -37,7 +37,9 @@ class APIManager {
      * @returns {Promise<Object>} API response
      */
     async request(endpoint, options = {}) {
-        const url = `${this.baseURL}${endpoint}`;
+        // Ensure endpoint starts with /api if not already
+        const apiEndpoint = endpoint.startsWith('/api') ? endpoint : `/api${endpoint}`;
+        const url = `${this.baseURL}${apiEndpoint}`;
         const config = {
             ...options,
             headers: {

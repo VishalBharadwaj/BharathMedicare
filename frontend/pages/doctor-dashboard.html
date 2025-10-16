@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - Medical Records System</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .dashboard-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .search-section {
+            background: var(--surface-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .patients-section {
+            background: var(--surface-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--background-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .patients-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .patients-table th,
+        .patients-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .patients-table th {
+            background: var(--background-color);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .patients-table tbody tr:hover {
+            background: var(--background-color);
+        }
+
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+        }
+
+        .spinner {
+            width: 2rem;
+            height: 2rem;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--surface-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            padding: 1.5rem 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .modal-body {
+            padding: 1rem 1.5rem;
+        }
+
+        .modal-footer {
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .patients-table {
+                font-size: 0.875rem;
+            }
+
+            .patients-table th,
+            .patients-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="../index.html" class="navbar-brand">🏥 Medical Records System</a>
+                <div class="user-menu">
+                    <div class="user-info">
+                        <div class="user-name" id="doctorName">Loading...</div>
+                        <div class="user-role">Doctor</div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-header">
+        <div class="container">
+            <div class="dashboard-title">
+                <div>
+                    <h1>Doctor Dashboard</h1>
+                    <p>Welcome back, <span id="doctorWelcome">Doctor</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="document-upload.html" class="btn btn-primary">
+                📝 Add Consultation Note
+            </a>
+            <button class="btn btn-secondary" onclick="openRequestAccessModal()">
+                🔑 Request Access
+            </button>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <h3 style="margin-bottom: 1rem;">Search Patients</h3>
+            <input type="text" id="searchInput" class="search-input"
+                placeholder="Search by name, email, or patient ID..." onkeyup="filterPatients()">
+        </div>
+
+        <!-- Patients Section -->
+        <div class="patients-section">
+            <div class="section-header">
+                <h3>All Patients</h3>
+                <button class="btn btn-secondary" onclick="loadPatients()">
+                    🔄 Refresh
+                </button>
+            </div>
+
+            <div id="loadingSpinner" class="loading-spinner">
+                <div class="spinner"></div>
+                <span style="margin-left: 1rem;">Loading patients...</span>
+            </div>
+
+            <div id="patientsTableContainer" style="display: none;">
+                <table class="patients-table">
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Name</th>
+                            <th>Date of Birth</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientsTableBody">
+                        <!-- Patients will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <h4>No patients found</h4>
+                <p>No patients match your search criteria or you don't have access to any patient records yet.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Access Modal -->
+    <div id="requestAccessModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Request Patient Access</h3>
+                <button class="modal-close" onclick="closeRequestAccessModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="patientIdInput">Patient ID</label>
+                    <input type="text" id="patientIdInput" placeholder="Enter patient ID to request access" required>
+                    <small>Enter the patient ID you want to request access to view their records.</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeRequestAccessModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="requestAccess()">Request Access</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Medical Records Management System. Built with security and privacy in mind.</p>
+        </div>
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js?v=2"></script>
+    <script>
+        let allPatients = [];
+        let currentUser = null;
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Dashboard initializing...');
+
+            // Check authentication
+            if (!window.authManager || !window.authManager.isAuthenticated()) {
+                console.log('Not authenticated, redirecting to login');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            currentUser = window.authManager.getUserData();
+            console.log('Current user:', currentUser);
+
+            if (currentUser.role !== 'doctor') {
+                alert('Access denied. This page is for doctors only.');
+                window.location.href = '../index.html';
+                return;
+            }
+
+            // Test API connectivity
+            try {
+                console.log('Testing basic API connectivity...');
+
+                // Test root endpoint
+                const rootTest = await fetch(window.API_CONFIG.BASE_URL + '/');
+                console.log('Root test status:', rootTest.status);
+                if (rootTest.ok) {
+                    const rootData = await rootTest.json();
+                    console.log('Root data:', rootData);
+                }
+
+                // Test simple API endpoint
+                const apiTest = await fetch(window.API_CONFIG.getApiUrl('/api/test'));
+                console.log('API test status:', apiTest.status);
+                if (apiTest.ok) {
+                    const apiData = await apiTest.json();
+                    console.log('API test data:', apiData);
+                } else {
+                    const errorText = await apiTest.text();
+                    console.log('API test error:', errorText);
+                }
+
+                // Test debug routes
+                const debugTest = await fetch(window.API_CONFIG.getApiUrl('/debug/routes'));
+                console.log('Debug routes test status:', debugTest.status);
+                if (debugTest.ok) {
+                    const debugData = await debugTest.json();
+                    console.log('Available routes:', debugData.routes.filter(r => r.rule.includes('/api')));
+                } else {
+                    const errorText = await debugTest.text();
+                    console.log('Debug routes error:', errorText);
+                }
+
+                const basicTest = await fetch(window.API_CONFIG.getApiUrl('/api/patients/test'));
+                console.log('Basic API test status:', basicTest.status);
+                if (basicTest.ok) {
+                    const basicData = await basicTest.json();
+                    console.log('Basic API test data:', basicData);
+                } else {
+                    const errorText = await basicTest.text();
+                    console.log('Basic API test error:', errorText);
+                }
+
+                console.log('Testing authenticated API...');
+                const authTest = await fetch(window.API_CONFIG.getApiUrl('/api/auth/me'), {
+                    headers: {
+                        'Authorization': `Bearer ${window.authManager.getAccessToken()}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log('Auth API test status:', authTest.status);
+                if (authTest.ok) {
+                    const authData = await authTest.json();
+                    console.log('Auth API test data:', authData);
+                } else {
+                    const errorText = await authTest.text();
+                    console.log('Auth API test error:', errorText);
+                }
+            } catch (error) {
+                console.error('API connectivity test failed:', error);
+            }
+
+            await loadDoctorInfo();
+            await loadPatients();
+        });
+
+        // Load doctor information
+        async function loadDoctorInfo() {
+            try {
+                const response = await fetch(window.API_CONFIG.getApiUrl('/api/auth/me'), {
+                    headers: {
+                        'Authorization': `Bearer ${window.authManager.getAccessToken()}`
+                    }
+                });
+
+                if (response.ok) {
+                    const doctorData = await response.json();
+                    document.getElementById('doctorName').textContent = doctorData.name || 'Doctor';
+                    document.getElementById('doctorWelcome').textContent = doctorData.name || 'Doctor';
+                } else {
+                    console.error('Failed to load doctor information');
+                }
+            } catch (error) {
+                console.error('Error loading doctor information:', error);
+            }
+        }
+
+        // Load patients data
+        async function loadPatients() {
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const tableContainer = document.getElementById('patientsTableContainer');
+            const emptyState = document.getElementById('emptyState');
+
+            // Show loading state
+            loadingSpinner.style.display = 'flex';
+            tableContainer.style.display = 'none';
+            emptyState.style.display = 'none';
+
+            try {
+                console.log('Fetching patients from /api/patients...');
+                // Check auth manager and get token
+                if (!window.authManager) {
+                    throw new Error('Auth manager not available');
+                }
+
+                const token = window.authManager.getAccessToken();
+                console.log('Auth token:', token ? 'Present' : 'Missing');
+                console.log('Current URL:', window.location.href);
+                const patientsUrl = window.API_CONFIG.getApiUrl('/api/patients/');
+                console.log('Making request to:', patientsUrl);
+
+                if (!token) {
+                    throw new Error('No authentication token available');
+                }
+
+                // Try the patients endpoint first
+                let response = await fetch(patientsUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                // If patients endpoint fails, try using users search as fallback
+                if (!response.ok) {
+                    console.log(`Patients endpoint failed with status ${response.status}, trying users search fallback...`);
+                    // Use a wildcard search to get all patients
+                    response = await fetch(window.API_CONFIG.getApiUrl('/api/users/search?role=patient&q=a'), {
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                }
+
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Raw response data:', data);
+                    // Handle both patients endpoint and users search endpoint responses
+                    allPatients = data.patients || data.users || [];
+                    console.log('Extracted patients:', allPatients);
+                    displayPatients(allPatients);
+                } else {
+                    const errorText = await response.text();
+                    console.error('Error response:', errorText);
+                    let errorMessage = 'Failed to load patients';
+
+                    try {
+                        const errorData = JSON.parse(errorText);
+                        errorMessage = errorData.error?.message || errorData.message || errorMessage;
+                    } catch (e) {
+                        errorMessage = `HTTP ${response.status}: ${errorText}`;
+                    }
+
+                    throw new Error(errorMessage);
+                }
+            } catch (error) {
+                console.error('Error loading patients:', error);
+                alert(`Failed to load patients: ${error.message}`);
+                allPatients = [];
+                displayPatients([]);
+            } finally {
+                loadingSpinner.style.display = 'none';
+            }
+        }
+
+        // Display patients in table
+        function displayPatients(patients) {
+            const tableContainer = document.getElementById('patientsTableContainer');
+            const emptyState = document.getElementById('emptyState');
+            const tableBody = document.getElementById('patientsTableBody');
+
+            if (patients.length === 0) {
+                tableContainer.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            tableContainer.style.display = 'block';
+            emptyState.style.display = 'none';
+
+            tableBody.innerHTML = patients.map(patient => {
+                // Handle patient ID
+                const patientId = patient._id || patient.id || 'N/A';
+
+                // Handle patient name
+                const firstName = patient.first_name || '';
+                const lastName = patient.last_name || '';
+                const fullName = `${firstName} ${lastName}`.trim() || patient.name || 'N/A';
+
+                // Handle date of birth
+                const dateOfBirth = patient.date_of_birth || patient.dateOfBirth;
+                const formattedDate = dateOfBirth ? new Date(dateOfBirth).toLocaleDateString() : 'N/A';
+
+                // Handle contact info
+                const contact = patient.email || patient.phone || 'N/A';
+
+                return `
+                    <tr>
+                        <td>${patientId}</td>
+                        <td>${fullName}</td>
+                        <td>${formattedDate}</td>
+                        <td>${contact}</td>
+                        <td>
+                            <button onclick="viewPatientRecords('${patientId}', '${fullName}')" 
+                                    class="btn btn-primary btn-sm">
+                                👁️ View Records
+                            </button>
+                            <button onclick="viewPatientDetails('${patientId}')" 
+                                    class="btn btn-secondary btn-sm" style="margin-left: 0.5rem;">
+                                📋 Details
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Filter patients based on search input
+        function filterPatients() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            if (!searchTerm) {
+                displayPatients(allPatients);
+                return;
+            }
+
+            const filteredPatients = allPatients.filter(patient => {
+                // Handle different name formats
+                const firstName = (patient.first_name || '').toLowerCase();
+                const lastName = (patient.last_name || '').toLowerCase();
+                const fullName = `${firstName} ${lastName}`.trim();
+                const name = fullName || (patient.name || '').toLowerCase();
+
+                const email = (patient.email || '').toLowerCase();
+                const id = (patient._id || patient.id || '').toString().toLowerCase();
+
+                return name.includes(searchTerm) ||
+                    firstName.includes(searchTerm) ||
+                    lastName.includes(searchTerm) ||
+                    email.includes(searchTerm) ||
+                    id.includes(searchTerm);
+            });
+
+            displayPatients(filteredPatients);
+        }
+
+        // Open request access modal
+        function openRequestAccessModal() {
+            document.getElementById('requestAccessModal').classList.add('show');
+            document.getElementById('patientIdInput').value = '';
+            document.getElementById('patientIdInput').focus();
+        }
+
+        // Close request access modal
+        function closeRequestAccessModal() {
+            document.getElementById('requestAccessModal').classList.remove('show');
+        }
+
+        // Request access to patient records
+        async function requestAccess() {
+            const patientId = document.getElementById('patientIdInput').value.trim();
+
+            if (!patientId) {
+                alert('Please enter a patient ID');
+                return;
+            }
+
+            try {
+                const response = await fetch(window.API_CONFIG.getApiUrl('/api/access/grant'), {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${window.authManager.getAccessToken()}`
+                    },
+                    body: JSON.stringify({
+                        patientId: patientId
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Access request submitted successfully!');
+                    closeRequestAccessModal();
+                    // Refresh patients list to show newly accessible patients
+                    await loadPatients();
+                } else {
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Failed to request access');
+                }
+            } catch (error) {
+                console.error('Error requesting access:', error);
+                alert('Failed to request access: ' + error.message);
+            }
+        }
+
+        // Logout function
+        function logout() {
+            if (window.authManager) {
+                window.authManager.logout();
+            }
+            window.location.href = '../login.html';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('requestAccessModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeRequestAccessModal();
+            }
+        });
+
+        // Handle Enter key in search input
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                filterPatients();
+            }
+        });
+
+        // Handle Enter key in patient ID input
+        document.getElementById('patientIdInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                requestAccess();
+            }
+        });
+
+        // View patient records
+        async function viewPatientRecords(patientId, patientName) {
+            try {
+                const response = await fetch(window.API_CONFIG.getApiUrl(`/api/patients/${patientId}/records`), {
+                    headers: {
+                        'Authorization': `Bearer ${window.authManager.getAccessToken()}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    showPatientRecordsModal(data, patientName);
+                } else {
+                    const errorData = await response.json();
+                    alert(`Failed to load patient records: ${errorData.error?.message || 'Unknown error'}`);
+                }
+            } catch (error) {
+                console.error('Error loading patient records:', error);
+                alert('Failed to load patient records. Please try again.');
+            }
+        }
+
+        // View patient details
+        async function viewPatientDetails(patientId) {
+            try {
+                const response = await fetch(window.API_CONFIG.getApiUrl(`/api/patients/${patientId}`), {
+                    headers: {
+                        'Authorization': `Bearer ${window.authManager.getAccessToken()}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    showPatientDetailsModal(data.patient);
+                } else {
+                    const errorData = await response.json();
+                    alert(`Failed to load patient details: ${errorData.error?.message || 'Unknown error'}`);
+                }
+            } catch (error) {
+                console.error('Error loading patient details:', error);
+                alert('Failed to load patient details. Please try again.');
+            }
+        }
+
+        // Show patient records modal
+        function showPatientRecordsModal(data, patientName) {
+            const modal = document.createElement('div');
+            modal.className = 'modal show';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 800px;">
+                    <div class="modal-header">
+                        <h3>Medical Records - ${patientName}</h3>
+                        <button class="modal-close" onclick="this.closest('.modal').remove()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        ${data.records.length > 0 ? `
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Type</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Size</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${data.records.map(record => `
+                                        <tr>
+                                            <td>${new Date(record.created_at).toLocaleDateString()}</td>
+                                            <td>${record.document_type}</td>
+                                            <td>${record.title}</td>
+                                            <td>${record.description || 'N/A'}</td>
+                                            <td>${(record.file_size / 1024).toFixed(1)} KB</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        ` : `
+                            <div class="empty-state">
+                                <h4>No Records Found</h4>
+                                <p>No medical records available for this patient or you don't have access to them.</p>
+                            </div>
+                        `}
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="this.closest('.modal').remove()">Close</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Show patient details modal
+        function showPatientDetailsModal(patient) {
+            const modal = document.createElement('div');
+            modal.className = 'modal show';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Patient Details</h3>
+                        <button class="modal-close" onclick="this.closest('.modal').remove()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <p>${patient.first_name} ${patient.last_name}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Medical Record Number</label>
+                                <p>${patient.medical_record_number || 'N/A'}</p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <p>${patient.date_of_birth ? new Date(patient.date_of_birth).toLocaleDateString() : 'N/A'}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <p>${patient.email}</p>
+                            </div>
+                        </div>
+                        ${patient.emergency_contact && Object.keys(patient.emergency_contact).length > 0 ? `
+                            <div class="form-group">
+                                <label>Emergency Contact</label>
+                                <p>${patient.emergency_contact.name || 'N/A'} - ${patient.emergency_contact.phone || 'N/A'}</p>
+                            </div>
+                        ` : ''}
+                        ${patient.insurance_info && Object.keys(patient.insurance_info).length > 0 ? `
+                            <div class="form-group">
+                                <label>Insurance</label>
+                                <p>${patient.insurance_info.provider || 'N/A'} - ${patient.insurance_info.policy_number || 'N/A'}</p>
+                            </div>
+                        ` : ''}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Account Created</label>
+                                <p>${new Date(patient.created_at).toLocaleDateString()}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Login</label>
+                                <p>${patient.last_login ? new Date(patient.last_login).toLocaleDateString() : 'Never'}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="this.closest('.modal').remove()">Close</button>
+                        <button class="btn btn-primary" onclick="viewPatientRecords('${patient.id}', '${patient.first_name} ${patient.last_name}'); this.closest('.modal').remove();">View Records</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+
+</html>

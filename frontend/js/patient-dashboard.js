@@ -13,22 +13,38 @@ class PatientDashboard {
     }
 
     async init() {
+        console.log('Patient dashboard initializing...');
+        
         // Check authentication and role
-        if (!window.authManager.isAuthenticated() || !window.authManager.hasRole('patient')) {
+        if (!window.authManager || !window.authManager.isAuthenticated()) {
+            console.log('Not authenticated, redirecting to login');
             window.location.href = 'login.html';
+            return;
+        }
+
+        if (!window.authManager.hasRole('patient')) {
+            console.log('Not a patient, redirecting');
+            window.location.href = '../index.html';
             return;
         }
 
         // Get patient ID from user data
         const userData = window.authManager.getUserData();
-        this.patientId = userData.id;
+        this.patientId = userData.id || userData._id;
+        console.log('Patient ID:', this.patientId);
 
         // Setup event listeners
         this.setupEventListeners();
+        console.log('Event listeners set up');
         
         // Load initial data
-        await this.loadDashboardData();
-        await this.loadUserProfile();
+        try {
+            await this.loadDashboardData();
+            await this.loadUserProfile();
+            console.log('Dashboard data loaded');
+        } catch (error) {
+            console.error('Error loading dashboard:', error);
+        }
     }
 
     setupEventListeners() {
@@ -56,15 +72,29 @@ class PatientDashboard {
         }
 
         // Logout button
-        const logoutBtn = document.getElementById('logoutBtn');
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', () => this.handleLogout());
-        }
+        document.querySelectorAll('.logout-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.handleLogout();
+            });
+        });
 
         // Search functionality
         const searchInput = document.getElementById('searchInput');
         if (searchInput) {
             searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
+        }
+
+        // Doctor search for access control
+        const searchDoctor = document.getElementById('searchDoctor');
+        if (searchDoctor) {
+            searchDoctor.addEventListener('input', (e) => this.searchDoctors(e.target.value));
+        }
+
+        // Grant access form
+        const grantAccessForm = document.getElementById('grantAccessForm');
+        if (grantAccessForm) {
+            grantAccessForm.addEventListener('submit', (e) => this.handleGrantAccess(e));
         }
 
         // Pagination
@@ -84,13 +114,30 @@ class PatientDashboard {
             const recentRecords = await window.apiManager.get(`/records/patient/${this.patientId}`, { limit: 5 });
             this.displayRecentRecords(recentRecords.records || []);
             
-            // Load statistics (mock data for now)
-            const stats = {
-                total_records: recentRecords.records ? recentRecords.records.length : 0,
-                recent_uploads: 0,
-                shared_records: 0
-            };
-            this.displayStats(stats);
+            // Update statistics
+            const totalRecordsEl = document.getElementById('totalRecords');
+            if (totalRecordsEl) {
+                totalRecordsEl.textContent = recentRecords.pagination?.total || recentRecords.records?.length || 0;
+            }
+            
+            // Load access grants count
+            try {
+                // This would need a dedicated endpoint - for now using placeholder
+                const activeGrantsEl = document.getElementById('activeGrants');
+                if (activeGrantsEl) {
+                    activeGrantsEl.textContent = '0';
+                }
+            } catch (e) {
+                console.log('Could not load access grants');
+            }
+            
+            // Set last activity
+            const lastActivityEl = document.getElementById('lastActivity');
+            if (lastActivityEl && recentRecords.records && recentRecords.records.length > 0) {
+                const lastRecord = recentRecords.records[0];
+                const lastDate = new Date(lastRecord.created_at);
+                lastActivityEl.textContent = lastDate.toLocaleDateString();
+            }
             
         } catch (error) {
             console.error('Error loading dashboard data:', error);
@@ -257,15 +304,23 @@ class PatientDashboard {
     }
 
     showSection(sectionName) {
+        console.log('Showing section:', sectionName);
+        
         // Hide all sections
-        document.querySelectorAll('.dashboard-section').forEach(section => {
+        const allSections = document.querySelectorAll('.content-section');
+        console.log('Found sections:', allSections.length);
+        allSections.forEach(section => {
             section.classList.remove('active');
         });
 
         // Show selected section
-        const targetSection = document.getElementById(`${sectionName}Section`);
+        const targetSection = document.getElementById(sectionName);
+        console.log('Target section:', targetSection);
         if (targetSection) {
             targetSection.classList.add('active');
+            console.log('Section activated:', sectionName);
+        } else {
+            console.error('Section not found:', sectionName);
         }
 
         // Update navigation
@@ -283,6 +338,10 @@ class PatientDashboard {
         // Load section-specific data
         if (sectionName === 'records') {
             this.loadRecords();
+        } else if (sectionName === 'access') {
+            this.loadAccessControl();
+        } else if (sectionName === 'profile') {
+            this.loadUserProfile();
         }
     }
 
@@ -453,6 +512,108 @@ class PatientDashboard {
         });
     }
 
+    async loadAccessControl() {
+        try {
+            // Load documents for access control dropdown
+            const records = await window.apiManager.get(`/records/patient/${this.patientId}`);
+            const selectDocument = document.getElementById('selectDocument');
+            
+            if (selectDocument && records.records) {
+                selectDocument.innerHTML = '<option value="">Choose a document</option>' +
+                    records.records.map(record => 
+                        `<option value="${record._id || record.id}">${record.title || record.document_type}</option>`
+                    ).join('');
+            }
+            
+            // Load active access grants
+            await this.loadActiveAccessGrants();
+            
+        } catch (error) {
+            console.error('Error loading access control:', error);
+            window.uiManager.showError('Failed to load access control data');
+        }
+    }
+
+    async loadActiveAccessGrants() {
+        try {
+            // This would need a dedicated endpoint to list all grants for a patient
+            const activeAccessList = document.getElementById('activeAccessList');
+            if (activeAccessList) {
+                activeAccessList.innerHTML = '<p class="no-data">No active access grants</p>';
+            }
+        } catch (error) {
+            console.error('Error loading access grants:', error);
+        }
+    }
+
+    async handleGrantAccess(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const grantData = {
+            document_id: formData.get('document_id'),
+            grantee_id: formData.get('grantee_id'),
+            access_level: formData.get('access_level'),
+            expires_at: formData.get('expires_at') || null,
+            reason: formData.get('reason')
+        };
+
+        try {
+            this.showLoading(true);
+            
+            await window.apiManager.post('/access/grant', grantData);
+            
+            window.uiManager.showSuccess('Access granted successfully');
+            event.target.reset();
+            await this.loadActiveAccessGrants();
+            
+        } catch (error) {
+            console.error('Error granting access:', error);
+            window.uiManager.showError('Failed to grant access');
+        } finally {
+            this.showLoading(false);
+        }
+    }
+
+    async searchDoctors(query) {
+        if (!query || query.length < 2) {
+            document.getElementById('doctorResults').innerHTML = '';
+            return;
+        }
+
+        try {
+            const results = await window.apiManager.get('/users/search', { 
+                q: query, 
+                role: 'doctor' 
+            });
+            
+            const resultsContainer = document.getElementById('doctorResults');
+            if (resultsContainer) {
+                if (results.users && results.users.length > 0) {
+                    resultsContainer.innerHTML = results.users.map(doctor => `
+                        <div class="search-result-item" onclick="patientDashboard.selectDoctor('${doctor.id}', '${doctor.first_name} ${doctor.last_name}')">
+                            <strong>${doctor.first_name} ${doctor.last_name}</strong>
+                            <small>${doctor.specialization || 'Doctor'}</small>
+                        </div>
+                    `).join('');
+                } else {
+                    resultsContainer.innerHTML = '<p class="no-data">No doctors found</p>';
+                }
+            }
+        } catch (error) {
+            console.error('Error searching doctors:', error);
+        }
+    }
+
+    selectDoctor(doctorId, doctorName) {
+        const searchInput = document.getElementById('searchDoctor');
+        if (searchInput) {
+            searchInput.value = doctorName;
+            searchInput.setAttribute('data-doctor-id', doctorId);
+        }
+        document.getElementById('doctorResults').innerHTML = '';
+    }
+
     showLoading(show) {
         const loader = document.getElementById('loader');
         if (loader) {
@@ -461,7 +622,47 @@ class PatientDashboard {
     }
 }
 
+// Make showSection globally accessible
+window.showSection = function(sectionName) {
+    console.log('Global showSection called:', sectionName);
+    if (window.patientDashboard) {
+        window.patientDashboard.showSection(sectionName);
+    } else {
+        console.error('Patient dashboard not initialized');
+    }
+};
+
+// Simple direct navigation function as backup
+window.switchSection = function(sectionName) {
+    console.log('Direct switch to:', sectionName);
+    
+    // Hide all sections
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Show target section
+    const target = document.getElementById(sectionName);
+    if (target) {
+        target.classList.add('active');
+        console.log('Section shown:', sectionName);
+    } else {
+        console.error('Section not found:', sectionName);
+    }
+    
+    // Update navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    const activeLink = document.querySelector(`[data-section="${sectionName}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+};
+
 // Initialize dashboard when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing patient dashboard');
     window.patientDashboard = new PatientDashboard();
 });

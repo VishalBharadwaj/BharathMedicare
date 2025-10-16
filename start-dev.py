@@ -37,15 +37,15 @@ def start_backend():
         print("❌ Backend directory not found")
         return None
     
-    # Start Flask app
+    # Start Flask app from project root with correct Python path
     env = os.environ.copy()
     env['FLASK_ENV'] = 'development'
     env['FLASK_DEBUG'] = '1'
-    env['PYTHONPATH'] = str(backend_dir.absolute())
+    env['PYTHONPATH'] = str(Path('.').absolute())  # Set to project root
     
     process = subprocess.Popen([
-        sys.executable, 'run.py'
-    ], cwd=backend_dir, env=env)
+        sys.executable, 'backend/run.py'  # Run from project root
+    ], cwd='.', env=env)  # Run from project root
     
     return process
 

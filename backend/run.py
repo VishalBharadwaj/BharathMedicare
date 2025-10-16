@@ -4,7 +4,14 @@ Medical Records Management System - Main Application Entry Point
 """
 
 import os
+import sys
 import logging
+from pathlib import Path
+
+# Add the backend directory to Python path for proper imports
+backend_dir = Path(__file__).parent
+sys.path.insert(0, str(backend_dir))
+
 from flask import Flask
 from app import create_app
 from app.models.database import db_manager

@@ -22,12 +22,12 @@
             </div>
 
             <ul class="sidebar-nav">
-                <li><a href="#dashboard" class="nav-link active" data-section="dashboard">📊 Dashboard</a></li>
-                <li><a href="#records" class="nav-link" data-section="records">📄 My Records</a></li>
-                <li><a href="#upload" class="nav-link" data-section="upload">📤 Upload Document</a></li>
-                <li><a href="#access" class="nav-link" data-section="access">🔐 Access Control</a></li>
-                <li><a href="#profile" class="nav-link" data-section="profile">👤 Profile</a></li>
-                <li><a href="#" class="nav-link logout-btn">🚪 Logout</a></li>
+                <li><a href="javascript:void(0)" class="nav-link active" onclick="showSection('dashboard')">📊 Dashboard</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('records')">📄 My Records</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('upload')">📤 Upload Document</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('access')">🔐 Access Control</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('profile')">👤 Profile</a></li>
+                <li><a href="javascript:void(0)" class="nav-link logout-btn">🚪 Logout</a></li>
             </ul>
         </nav>
 
@@ -355,11 +355,43 @@
         </main>
     </div>
 
+    <script src="../js/config.js"></script>
     <script src="../js/encryption.js"></script>
     <script src="../js/auth.js"></script>
     <script src="../js/api.js"></script>
     <script src="../js/ui.js"></script>
     <script src="../js/patient-dashboard.js"></script>
+    <script>
+        // Simple navigation function
+        function showSection(sectionName) {
+            console.log('Switching to section:', sectionName);
+            
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            const targetSection = document.getElementById(sectionName);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                console.log('Section shown:', sectionName);
+            } else {
+                console.error('Section not found:', sectionName);
+            }
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Find and activate the clicked link
+            const clickedLink = event ? event.target.closest('.nav-link') : null;
+            if (clickedLink) {
+                clickedLink.classList.add('active');
+            }
+        }
+    </script>
 </body>
 
 </html>

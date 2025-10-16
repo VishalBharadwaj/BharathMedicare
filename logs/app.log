@@ -1,0 +1,331 @@
+2025-10-16 19:12:31,420 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:12:31,420 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:12:31,420 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:12:31,421 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:12:31,432 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 19:12:31,432 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 19:12:31,434 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:12:32,067 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:12:32,067 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:12:32,067 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:12:32,067 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:12:32,074 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:12:32,077 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:16:05,105 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\backend\\app\\__init__.py', reloading
+2025-10-16 19:20:19,268 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:20:19,268 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:20:19,269 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:20:19,269 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:20:19,286 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 19:20:19,287 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 19:20:19,288 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:20:19,837 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:20:19,837 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:20:19,837 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:20:19,838 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:20:19,850 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:20:19,853 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:20:22,602 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:22] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:20:23,130 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:20:23,131 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:23] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:20:24,316 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:24] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:20:24,628 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:24] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:20:36,516 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:36] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:20:37,103 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:20:37,103 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:37] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2025-10-16 19:20:43,848 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:43] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:20:44,438 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:20:44,439 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:44] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2025-10-16 19:20:53,179 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:53] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:20:53,769 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:20:53,769 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:53] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:20:54,811 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:54] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:20:55,130 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:20:55] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:26:50,519 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:50] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:26:51,068 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:26:51,068 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:51] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:26:52,109 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:52] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:26:52,427 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:52] "GET / HTTP/1.1" 200 -
+2025-10-16 19:26:52,431 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:52] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:26:52,734 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:52] "GET /api/test HTTP/1.1" 200 -
+2025-10-16 19:26:53,043 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:53] "GET /debug/routes HTTP/1.1" 200 -
+2025-10-16 19:26:53,302 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:53] "GET /api/patients/test HTTP/1.1" 200 -
+2025-10-16 19:26:53,361 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:53] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:26:53,611 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:53] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:26:53,672 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:53] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:26:53,931 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:26:53] "[32mOPTIONS /api/patients HTTP/1.1[0m" 308 -
+2025-10-16 19:31:00,252 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\test_routes.py', reloading
+2025-10-16 19:31:00,878 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:31:01,611 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:31:01,611 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:31:01,611 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:31:01,612 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:31:01,626 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:31:01,629 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:35:25,330 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:25] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:35:25,883 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:35:25,883 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:25] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:35:26,934 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:26] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:35:27,251 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:27] "GET / HTTP/1.1" 200 -
+2025-10-16 19:35:27,255 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:27] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:35:27,560 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:27] "GET /api/test HTTP/1.1" 200 -
+2025-10-16 19:35:27,882 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:27] "GET /debug/routes HTTP/1.1" 200 -
+2025-10-16 19:35:28,127 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:28] "GET /api/patients/test HTTP/1.1" 200 -
+2025-10-16 19:35:28,204 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:28] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:35:28,437 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:28] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:35:28,514 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:28] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:35:28,756 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:35:28] "[32mOPTIONS /api/patients HTTP/1.1[0m" 308 -
+2025-10-16 19:37:30,417 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\test_patients_import.py', reloading
+2025-10-16 19:37:30,902 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:37:31,612 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:37:31,613 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:37:31,613 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:37:31,613 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:37:31,627 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:37:31,630 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:38:12,071 - werkzeug - INFO -  * Detected change in 'C:\\Users\\visha\\Documents\\Projects\\BharathMedicare\\check_server.py', reloading
+2025-10-16 19:38:12,697 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:38:13,598 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:38:13,598 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:38:13,599 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:38:13,599 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:38:13,617 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:38:13,622 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:38:13,687 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:13] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:38:13,975 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:38:13,976 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:13] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:38:15,328 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:15] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:38:15,329 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:15] "GET / HTTP/1.1" 200 -
+2025-10-16 19:38:15,589 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:15] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:38:15,650 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:15] "GET /api/test HTTP/1.1" 200 -
+2025-10-16 19:38:15,655 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:15] "GET /debug/routes HTTP/1.1" 200 -
+2025-10-16 19:38:15,974 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:15] "GET /api/patients/test HTTP/1.1" 200 -
+2025-10-16 19:38:16,224 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:16] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:38:16,288 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:16] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:38:16,533 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:16] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:38:16,608 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:16] "[32mOPTIONS /api/patients HTTP/1.1[0m" 308 -
+2025-10-16 19:38:36,937 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:36] "GET /api/patients/test HTTP/1.1" 200 -
+2025-10-16 19:38:57,864 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:38:57] "[35m[1mGET /api/patients/ HTTP/1.1[0m" 500 -
+2025-10-16 19:43:12,447 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:12] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:43:12,987 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e68e112bab290984afac by user 68f0e68e112bab290984afac
+2025-10-16 19:43:12,987 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:12] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:43:15,592 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:15] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:43:15,594 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:15] "GET / HTTP/1.1" 200 -
+2025-10-16 19:43:15,838 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:15] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:43:15,897 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:15] "GET /api/test HTTP/1.1" 200 -
+2025-10-16 19:43:15,902 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:15] "GET /debug/routes HTTP/1.1" 200 -
+2025-10-16 19:43:16,208 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:16] "GET /api/patients/test HTTP/1.1" 200 -
+2025-10-16 19:43:16,469 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:16] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:43:16,517 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:16] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:43:16,778 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:16] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:43:16,836 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:16] "OPTIONS /api/patients/ HTTP/1.1" 200 -
+2025-10-16 19:43:17,124 - app.utils.audit - INFO - Audit log created: PATIENTS_LISTED on PATIENT:multiple by user 68f0e68e112bab290984afac
+2025-10-16 19:43:17,125 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:43:17] "GET /api/patients/ HTTP/1.1" 200 -
+2025-10-16 19:58:07,752 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:58:07,752 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:58:07,752 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:58:07,753 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:58:07,772 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 19:58:07,773 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 19:58:07,775 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 19:58:08,333 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 19:58:08,334 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 19:58:08,334 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 19:58:08,334 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 19:58:08,351 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 19:58:08,354 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 19:58:35,978 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:35] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:58:36,525 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68f0e736112bab290984afaf by user 68f0e736112bab290984afaf
+2025-10-16 19:58:36,526 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:36] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:58:37,576 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:37] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:58:37,881 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:37] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:58:37,885 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:37] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:58:38,188 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:38] "GET /api/auth/me HTTP/1.1" 200 -
+2025-10-16 19:58:38,497 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:38] "OPTIONS /api/admin/statistics HTTP/1.1" 200 -
+2025-10-16 19:58:38,782 - app.utils.audit - INFO - Audit log created: STATISTICS_VIEWED on SYSTEM:statistics by user 68f0e736112bab290984afaf
+2025-10-16 19:58:38,783 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:38] "GET /api/admin/statistics HTTP/1.1" 200 -
+2025-10-16 19:58:38,809 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:38] "OPTIONS /api/users/search?role=doctor&q=a HTTP/1.1" 200 -
+2025-10-16 19:58:39,106 - app.utils.audit - INFO - Audit log created: USER_SEARCH on USER:multiple by user 68f0e736112bab290984afaf
+2025-10-16 19:58:39,106 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:39] "GET /api/users/search?role=doctor&q=a HTTP/1.1" 200 -
+2025-10-16 19:58:39,113 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:39] "OPTIONS /api/patients/ HTTP/1.1" 200 -
+2025-10-16 19:58:39,429 - app.utils.audit - INFO - Audit log created: PATIENTS_LISTED on PATIENT:multiple by user 68f0e736112bab290984afaf
+2025-10-16 19:58:39,430 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:58:39] "GET /api/patients/ HTTP/1.1" 200 -
+2025-10-16 19:59:56,603 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:59:56] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:59:57,146 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 19:59:57,147 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:59:57] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 19:59:58,226 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:59:58] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:59:58,530 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:59:58] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 19:59:58,535 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:59:58] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 19:59:58,840 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 19:59:58,841 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:59:58] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 19:59:59,158 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:59:59] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 19:59:59,405 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 19:59:59] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:01:03,808 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:01:03] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:01:04,058 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:01:04,059 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:01:04] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:06:16,002 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:06:16] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:06:16,256 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:06:16,257 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:06:16] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:09:32,201 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:32] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:09:32,732 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:32,733 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:32] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:09:33,791 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:33] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:34,103 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:34] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:09:34,106 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:34] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:34,414 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:34,415 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:34] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:09:34,734 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:34] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:34,981 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:34] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:35,042 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:35] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:09:35,120 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:35,121 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:35] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:09:35,597 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:35,597 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:35] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:09:46,133 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:46] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:09:46,681 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:46,681 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:46] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:09:47,716 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:47] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:48,028 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:48] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:09:48,031 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:48] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:48,338 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:48,338 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:48] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:09:48,645 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:48] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:48,907 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:48] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:48,952 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:48] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:09:49,064 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:49,064 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:49] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:09:52,937 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:52] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:53,252 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:53,252 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:53] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:53,253 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:53] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:09:53,575 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:53] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:54,441 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:54] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:54,744 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:54] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:09:54,898 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:54] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:54,899 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:54] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:09:54,901 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:54] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:56,506 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:56] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:09:57,100 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:57,101 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:57] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:09:58,138 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:58] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:58,444 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:58,444 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:58] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:09:58,448 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:58] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:09:58,751 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:58] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:59,057 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:59] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:09:59,341 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:59] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:09:59,650 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:09:59,651 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:09:59] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:04,740 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:04] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:10:05,046 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:05] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:10:05,048 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:05] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:10:05,356 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:05,357 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:05] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:10:05,664 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:05] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:10:05,866 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:05] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:10:05,871 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:05,872 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:05] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:10:05,928 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:05] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:10:06,509 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:06] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:06,822 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:06,822 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:06] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:10,731 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:10,731 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:10] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:31,118 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 20:10:31,119 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 20:10:31,119 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 20:10:31,119 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 20:10:31,156 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.15:5000
+2025-10-16 20:10:31,156 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-16 20:10:31,159 - werkzeug - INFO -  * Restarting with stat
+2025-10-16 20:10:32,004 - app.models.database - INFO - Database indexes created successfully
+2025-10-16 20:10:32,005 - __main__ - INFO - Starting Medical Records System in development mode
+2025-10-16 20:10:32,005 - __main__ - INFO - Database: mongodb://localhost:27017/medical_records
+2025-10-16 20:10:32,005 - __main__ - INFO - Redis: redis://localhost:6379/0
+2025-10-16 20:10:32,038 - werkzeug - WARNING -  * Debugger is active!
+2025-10-16 20:10:32,044 - werkzeug - INFO -  * Debugger PIN: 631-160-677
+2025-10-16 20:10:41,343 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:41] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:10:41,893 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:41,893 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:41] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:10:42,974 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:42] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:10:43,277 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:43] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:10:43,280 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:43] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:10:43,587 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:43,588 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:43] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:10:43,893 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:43] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:10:44,150 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:44] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:10:44,614 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:44] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:44,922 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:44,923 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:44] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:46,562 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:46,563 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:46] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:48,357 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:48,358 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:48] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:52,608 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:52] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:10:52,917 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:10:52,918 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:10:52] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:11:45,467 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:11:45] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:11:45,780 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:11:45,781 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:11:45] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:12:43,605 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:12:43] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:12:43,915 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:12:43,916 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:12:43] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:12:44,750 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:12:44,751 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:12:44] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:18:18,315 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:18:18] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:18:18,580 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:18:18,581 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:18:18] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:18:18,767 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:18:18,767 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:18:18] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=10&page=1 HTTP/1.1" 200 -
+2025-10-16 20:25:54,763 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:25:54] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:25:55,773 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:25:55] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:25:56,377 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:25:56,378 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:25:56] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:25:57,416 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:25:57] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:25:57,724 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:25:57] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:25:58,036 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:25:58,036 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:25:58] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:25:58,293 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:25:58] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:25:58,355 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:25:58] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:26:06,777 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:06] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:26:07,383 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:26:07,384 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:07] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:26:08,425 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:08] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:26:08,730 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:08] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:26:08,733 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:08] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:26:08,989 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:26:08,990 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:08] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:26:09,035 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:09] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:26:09,301 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:09] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:26:43,083 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:43] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:26:43,678 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:26:43,679 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:43] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:26:44,727 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:44] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:26:45,031 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:45] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:26:45,034 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:45] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:26:45,343 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:26:45,344 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:45] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:26:45,665 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:45] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:26:45,912 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:26:45] "GET /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:29:27,634 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:29:27] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:29:28,185 - app.utils.audit - INFO - Audit log created: LOGIN_ATTEMPT on USER:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:29:28,186 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:29:28] "POST /api/auth/login HTTP/1.1" 200 -
+2025-10-16 20:29:29,240 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:29:29] "OPTIONS /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:29:29,546 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:29:29] "OPTIONS /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:29:29,550 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:29:29] "GET /api/auth/validate HTTP/1.1" 200 -
+2025-10-16 20:29:29,860 - app.utils.audit - INFO - Audit log created: PATIENT_RECORDS_LISTED on PATIENT:68ef63e4db264e8ed6a42e73 by user 68ef63e4db264e8ed6a42e73
+2025-10-16 20:29:29,861 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:29:29] "GET /api/records/patient/68ef63e4db264e8ed6a42e73?limit=5 HTTP/1.1" 200 -
+2025-10-16 20:29:30,181 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:29:30] "OPTIONS /api/users/profile HTTP/1.1" 200 -
+2025-10-16 20:29:30,428 - werkzeug - INFO - 127.0.0.1 - - [16/Oct/2025 20:29:30] "GET /api/users/profile HTTP/1.1" 200 -
