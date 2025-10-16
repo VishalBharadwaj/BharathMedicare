@@ -1,0 +1,816 @@
+/* Modern Glassmorphism Theme for Medical Records System */
+
+:root {
+    /* Indian Flag Color Palette */
+    --saffron: #FF671F;
+    --saffron-light: #FF8547;
+    --saffron-dark: #E65A1B;
+    --india-green: #046A38;
+    --india-green-light: #058C4A;
+    --india-green-dark: #035530;
+    --white: #FFFFFF;
+    
+    /* Modern Color Palette */
+    --primary-gradient: linear-gradient(135deg, #FF671F 0%, #046A38 100%);
+    --primary-color: #FF671F;
+    --primary-dark: #E65A1B;
+    --secondary-color: #046A38;
+    --accent-color: #FF8547;
+    
+    /* Glassmorphism Colors */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+    /* Surface Colors */
+    --surface-glass: rgba(255, 255, 255, 0.95);
+    --surface-glass-dark: rgba(255, 255, 255, 0.85);
+    
+    /* Text Colors */
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --text-light: #a0aec0;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #FF671F 0%, #FFFFFF 50%, #046A38 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Glassmorphism Background Pattern with Indian Colors */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 103, 31, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(4, 106, 56, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Logo Styles */
+.logo {
+    height: 40px;
+    width: auto;
+    margin-right: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.logo-large {
+    height: 60px;
+    width: auto;
+}
+
+/* Navbar - Glassmorphism */
+.navbar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar - Glassmorphism */
+.sidebar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+}
+
+.sidebar-header {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: white;
+    transform: scaleY(0);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    transform: scaleY(1);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+/* Cards - Glassmorphism */
+.card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glass);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-glass);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+}
+
+.stat-card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-glass);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--saffron) 0%, var(--white) 50%, var(--india-green) 100%);
+}
+
+.stat-card:nth-child(1)::before {
+    background: var(--saffron);
+}
+
+.stat-card:nth-child(2)::before {
+    background: var(--india-green);
+}
+
+.stat-card:nth-child(3)::before {
+    background: var(--saffron);
+}
+
+.stat-card:nth-child(4)::before {
+    background: var(--india-green);
+}
+
+/* Buttons - Modern Style */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 103, 31, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--india-green);
+    border: 1px solid rgba(4, 106, 56, 0.3);
+}
+
+.btn-secondary:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Form Inputs - Glassmorphism */
+input, select, textarea {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(4, 106, 56, 0.2);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--saffron);
+    box-shadow: 0 0 0 4px rgba(255, 103, 31, 0.1);
+    background: white;
+}
+
+/* Tables - Modern Style */
+.data-table, .patients-table {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.data-table th, .patients-table th {
+    background: linear-gradient(135deg, rgba(255, 103, 31, 0.1) 0%, rgba(4, 106, 56, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--india-green);
+}
+
+.data-table tbody tr, .patients-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.data-table tbody tr:hover, .patients-table tbody tr:hover {
+    background: rgba(255, 103, 31, 0.05);
+    transform: scale(1.01);
+}
+
+/* Badges - Modern Style */
+.badge {
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.badge.active {
+    background: rgba(16, 185, 129, 0.15);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Record Items - Glassmorphism */
+.record-item {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.record-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(255, 103, 31, 0.4);
+    border-left: 4px solid var(--saffron);
+}
+
+/* Loading States */
+.loading-placeholder {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.spinner {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notifications */
+.notification {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.5rem;
+    box-shadow: var(--shadow-lg);
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--saffron) 0%, var(--india-green) 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--saffron-light) 0%, var(--india-green-light) 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .logo {
+        height: 32px;
+    }
+}
+
+/* Premium Touches */
+.premium-gradient {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glass);
+}
+
+
+/* Indian Flag Inspired Elements */
+.indian-flag-accent {
+    position: relative;
+}
+
+.indian-flag-accent::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--saffron) 0%, var(--saffron) 33%, var(--white) 33%, var(--white) 66%, var(--india-green) 66%, var(--india-green) 100%);
+}
+
+/* Navigation Active State - Indian Colors */
+.nav-link.active {
+    background: linear-gradient(90deg, rgba(255, 103, 31, 0.15) 0%, rgba(4, 106, 56, 0.15) 100%);
+}
+
+.nav-link::before {
+    background: linear-gradient(180deg, var(--saffron) 0%, var(--india-green) 100%);
+}
+
+/* Dashboard Cards - Alternating Colors */
+.dashboard-card:nth-child(odd) {
+    border-left: 3px solid var(--saffron);
+}
+
+.dashboard-card:nth-child(even) {
+    border-left: 3px solid var(--india-green);
+}
+
+/* Badges with Indian Colors */
+.badge.saffron {
+    background: rgba(255, 103, 31, 0.15);
+    color: var(--saffron-dark);
+    border: 1px solid rgba(255, 103, 31, 0.3);
+}
+
+.badge.green {
+    background: rgba(4, 106, 56, 0.15);
+    color: var(--india-green-dark);
+    border: 1px solid rgba(4, 106, 56, 0.3);
+}
+
+/* Loading Spinner - Indian Colors */
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid var(--saffron);
+    border-right: 3px solid var(--india-green);
+}
+
+/* Notification Types */
+.notification-success {
+    border-left: 4px solid var(--india-green);
+}
+
+.notification-warning {
+    border-left: 4px solid var(--saffron);
+}
+
+/* Premium Gradient Text */
+.indian-gradient-text {
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--india-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Sidebar Enhancement */
+.sidebar {
+    border-right: 3px solid transparent;
+    border-image: linear-gradient(180deg, var(--saffron) 0%, var(--white) 50%, var(--india-green) 100%) 1;
+}
+
+/* Card Hover Effect - Indian Colors */
+.card:hover {
+    box-shadow: 0 12px 40px rgba(255, 103, 31, 0.15), 0 12px 40px rgba(4, 106, 56, 0.15);
+}
+
+/* Record Type Badges */
+.record-type {
+    background: linear-gradient(135deg, rgba(255, 103, 31, 0.1) 0%, rgba(4, 106, 56, 0.1) 100%);
+    color: var(--india-green-dark);
+    font-weight: 600;
+}
+
+/* Section Headers */
+.page-header h1 {
+    position: relative;
+    display: inline-block;
+}
+
+.page-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--saffron) 0%, var(--india-green) 100%);
+    border-radius: 2px;
+}
+
+/* Button Group - Indian Theme */
+.btn-group .btn-primary {
+    background: var(--saffron);
+}
+
+.btn-group .btn-secondary {
+    background: var(--india-green);
+    color: white;
+}
+
+/* Stats Value - Indian Colors */
+.stat-value {
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--india-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Form Focus States */
+input:focus, select:focus, textarea:focus {
+    border-image: linear-gradient(135deg, var(--saffron) 0%, var(--india-green) 100%) 1;
+}
+
+/* Patriotic Accent Line */
+.patriotic-line {
+    height: 3px;
+    background: linear-gradient(90deg, var(--saffron) 0%, var(--saffron) 33%, var(--white) 33%, var(--white) 66%, var(--india-green) 66%, var(--india-green) 100%);
+    margin: 2rem 0;
+}
+
+
+/* Professional Text Styling - High Contrast */
+body, p, span, div, label, input, select, textarea, button {
+    color: #1a202c !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1a202c !important;
+    font-weight: 700 !important;
+}
+
+/* Card Text */
+.card, .card-body, .card-content {
+    color: #1a202c !important;
+}
+
+.card h3, .card h4 {
+    color: #1a202c !important;
+}
+
+.card p {
+    color: #2d3748 !important;
+}
+
+/* Dashboard Text */
+.dashboard-card {
+    color: #1a202c !important;
+}
+
+.stat-value {
+    color: #FF671F !important;
+    font-weight: 800 !important;
+    background: none !important;
+    -webkit-text-fill-color: #FF671F !important;
+}
+
+.stat-label {
+    color: #2d3748 !important;
+    font-weight: 600 !important;
+}
+
+/* Page Headers */
+.page-header h1 {
+    color: #1a202c !important;
+}
+
+.page-header p {
+    color: #2d3748 !important;
+}
+
+/* Record Items */
+.record-item h4 {
+    color: #1a202c !important;
+    font-weight: 600 !important;
+}
+
+.record-item p {
+    color: #2d3748 !important;
+}
+
+.record-meta span {
+    color: #4a5568 !important;
+}
+
+/* Table Text */
+.data-table, .patients-table {
+    color: #1a202c !important;
+}
+
+.data-table th, .patients-table th {
+    color: #046A38 !important;
+    font-weight: 700 !important;
+}
+
+.data-table td, .patients-table td {
+    color: #1a202c !important;
+}
+
+/* Sidebar Text */
+.sidebar {
+    color: #ffffff !important;
+}
+
+.sidebar-header h3 {
+    color: #ffffff !important;
+}
+
+.user-name, .user-role {
+    color: #ffffff !important;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Button Text */
+.btn {
+    font-weight: 600 !important;
+}
+
+.btn-primary {
+    color: #ffffff !important;
+}
+
+.btn-secondary {
+    color: #046A38 !important;
+}
+
+/* Form Labels */
+label {
+    color: #1a202c !important;
+    font-weight: 600 !important;
+}
+
+/* Placeholder Text */
+::placeholder {
+    color: #718096 !important;
+    opacity: 1 !important;
+}
+
+/* Loading and Empty States */
+.loading-placeholder, .empty-state {
+    color: #2d3748 !important;
+}
+
+.empty-state h4 {
+    color: #1a202c !important;
+}
+
+/* Badges */
+.badge {
+    font-weight: 600 !important;
+}
+
+/* Section Headers */
+.section-header h3 {
+    color: #1a202c !important;
+}
+
+/* Card Headers */
+.card-header h3 {
+    color: #1a202c !important;
+}
+
+/* Feature Cards */
+.feature-card h3 {
+    color: #046A38 !important;
+}
+
+.feature-card p {
+    color: #2d3748 !important;
+}
+
+/* Ensure Readability on All Backgrounds */
+.glass-panel {
+    color: #1a202c !important;
+}
+
+/* Record Type and Meta */
+.record-type {
+    color: #046A38 !important;
+    font-weight: 700 !important;
+}
+
+.record-date {
+    color: #4a5568 !important;
+    font-weight: 500 !important;
+}
+
+/* Stats and Numbers */
+.card-content h3 {
+    color: #FF671F !important;
+    font-weight: 800 !important;
+}
+
+.card-content p {
+    color: #2d3748 !important;
+    font-weight: 600 !important;
+}
+
+/* Professional Font Weights */
+strong, b {
+    font-weight: 700 !important;
+    color: #1a202c !important;
+}
+
+/* Links */
+a {
+    color: #046A38 !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #FF671F !important;
+}
+
+/* Navbar Text */
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* User Info */
+.user-info {
+    color: #ffffff !important;
+}

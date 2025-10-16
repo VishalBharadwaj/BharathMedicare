@@ -7,6 +7,8 @@
     <title>Patient Dashboard - Medical Records System</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/modern-theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,7 +16,7 @@
         <!-- Navigation Sidebar -->
         <nav class="sidebar">
             <div class="sidebar-header">
-                <h3>Medical Records</h3>
+                <h3><img src="../assets/css/LOGO.png" alt="Logo" class="logo" style="height: 32px; margin-right: 8px; vertical-align: middle;">Bharath Medicare</h3>
                 <div class="user-info">
                     <div class="user-name"></div>
                     <div class="user-role"></div>
@@ -27,7 +29,7 @@
                 <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('upload')">📤 Upload Document</a></li>
                 <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('access')">🔐 Access Control</a></li>
                 <li><a href="javascript:void(0)" class="nav-link" onclick="showSection('profile')">👤 Profile</a></li>
-                <li><a href="javascript:void(0)" class="nav-link logout-btn">🚪 Logout</a></li>
+                <li><a href="javascript:void(0)" class="nav-link logout-btn" onclick="window.authManager.logout()">🚪 Logout</a></li>
             </ul>
         </nav>
 
@@ -361,6 +363,8 @@
     <script src="../js/api.js"></script>
     <script src="../js/ui.js"></script>
     <script src="../js/patient-dashboard.js"></script>
+    <script src="../js/upload-handler.js"></script>
+    <script src="../js/records-loader.js"></script>
     <script>
         // Simple navigation function
         function showSection(sectionName) {
@@ -395,3 +399,4 @@
 </body>
 
 </html>
+

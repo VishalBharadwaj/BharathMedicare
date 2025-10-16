@@ -216,7 +216,12 @@ class AuthManager {
      */
     logout() {
         this.clearTokens();
-        window.location.href = 'pages/login.html';
+        // Redirect to landing page - use relative path from pages directory
+        if (window.location.pathname.includes('/pages/')) {
+            window.location.href = '../index.html';
+        } else {
+            window.location.href = 'index.html';
+        }
     }
 
     /**
