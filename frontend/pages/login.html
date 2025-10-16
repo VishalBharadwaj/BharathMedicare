@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Medical Records System</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Medical Records System</h1>
+                <h2>Sign In</h2>
+                <p>Access your secure medical records</p>
+            </div>
+
+            <form id="loginForm" class="auth-form validate">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Enter your password">
+                </div>
+
+                <div class="form-group" id="mfaGroup" style="display: none;">
+                    <label for="mfaToken">Multi-Factor Authentication Code</label>
+                    <input type="text" id="mfaToken" name="mfa_token" 
+                           placeholder="Enter 6-digit code from your authenticator app">
+                    <small>Enter the 6-digit code from your authenticator app</small>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Sign In
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <div class="auth-links">
+                        <a href="register.html">Don't have an account? Register here</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Security Notice -->
+    <div class="security-notice">
+        <div class="security-content">
+            <h3>🔒 Security Notice</h3>
+            <ul>
+                <li>All medical records are encrypted with AES-256 encryption</li>
+                <li>Your session will automatically expire for security</li>
+                <li>Never share your login credentials with anyone</li>
+                <li>Report any suspicious activity immediately</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const mfaGroup = document.getElementById('mfaGroup');
+            let mfaRequired = false;
+
+            loginForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = loginForm.querySelector('button[type="submit"]');
+                window.uiManager.showLoading(submitBtn, 'Signing in...');
+
+                const formData = new FormData(loginForm);
+                const loginData = {
+                    email: formData.get('email'),
+                    password: formData.get('password')
+                };
+
+                // Add MFA token if required
+                if (mfaRequired) {
+                    loginData.mfa_token = formData.get('mfa_token');
+                }
+
+                try {
+                    const result = await window.authManager.login(
+                        loginData.email, 
+                        loginData.password, 
+                        loginData.mfa_token
+                    );
+
+                    if (result.success) {
+                        window.uiManager.showSuccess('Login successful! Redirecting...');
+                        
+                        // Redirect based on user role
+                        const userData = result.data.user;
+                        setTimeout(() => {
+                            switch (userData.role) {
+                                case 'patient':
+                                    window.location.href = 'patient-dashboard.html';
+                                    break;
+                                case 'doctor':
+                                    window.location.href = 'doctor-dashboard.html';
+                                    break;
+                                case 'admin':
+                                    window.location.href = 'admin-dashboard.html';
+                                    break;
+                                default:
+                                    window.location.href = 'patient-dashboard.html';
+                            }
+                        }, 1000);
+                    } else {
+                        // Handle MFA requirement
+                        if (result.error.code === 'MFA_REQUIRED') {
+                            mfaRequired = true;
+                            mfaGroup.style.display = 'block';
+                            document.getElementById('mfaToken').focus();
+                            window.uiManager.showWarning('Please enter your MFA code to continue');
+                        } else {
+                            window.uiManager.showError(result.error.message);
+                        }
+                    }
+                } catch (error) {
+                    window.uiManager.showError('An unexpected error occurred. Please try again.');
+                } finally {
+                    window.uiManager.hideLoading(submitBtn);
+                }
+            });
+
+            // Auto-focus email field
+            document.getElementById('email').focus();
+        });
+    </script>
+</body>
+</html>

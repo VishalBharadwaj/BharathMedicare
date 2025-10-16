@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Medical Records System</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Medical Records System</h1>
+                <h2>Create Account</h2>
+                <p>Join our secure medical records platform</p>
+            </div>
+
+            <form id="registerForm" class="auth-form validate">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="first_name" required 
+                               placeholder="Enter your first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="last_name" required 
+                               placeholder="Enter your last name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Create a strong password (min 8 characters)">
+                    <small>Password must be at least 8 characters long</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirm_password" required 
+                           placeholder="Confirm your password">
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Account Type</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select your role</option>
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="admin">Hospital Administrator</option>
+                    </select>
+                </div>
+
+                <!-- Patient-specific fields -->
+                <div id="patientFields" class="role-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" id="dateOfBirth" name="date_of_birth">
+                    </div>
+                    <div class="form-group">
+                        <label for="emergencyContact">Emergency Contact Name</label>
+                        <input type="text" id="emergencyContact" name="emergency_contact_name" 
+                               placeholder="Emergency contact full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="emergencyPhone">Emergency Contact Phone</label>
+                        <input type="tel" id="emergencyPhone" name="emergency_contact_phone" 
+                               placeholder="Emergency contact phone number">
+                    </div>
+                </div>
+
+                <!-- Doctor-specific fields -->
+                <div id="doctorFields" class="role-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="licenseNumber">Medical License Number</label>
+                        <input type="text" id="licenseNumber" name="license_number" 
+                               placeholder="Enter your medical license number">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialization">Specialization</label>
+                        <input type="text" id="specialization" name="specialization" 
+                               placeholder="e.g., Cardiology, Pediatrics, Internal Medicine">
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department" 
+                               placeholder="Hospital department">
+                    </div>
+                </div>
+
+                <!-- Admin-specific fields -->
+                <div id="adminFields" class="role-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="adminLevel">Administrator Level</label>
+                        <select id="adminLevel" name="admin_level">
+                            <option value="1">Level 1 - Department Admin</option>
+                            <option value="2">Level 2 - Hospital Admin</option>
+                            <option value="3">Level 3 - System Admin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#" target="_blank">Terms of Service</a> and 
+                        <a href="#" target="_blank">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeHipaa" required>
+                        <span class="checkmark"></span>
+                        I understand and agree to HIPAA compliance requirements
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Create Account
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <div class="auth-links">
+                        <a href="login.html">Already have an account? Sign in here</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/ui.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerForm = document.getElementById('registerForm');
+            const roleSelect = document.getElementById('role');
+            const patientFields = document.getElementById('patientFields');
+            const doctorFields = document.getElementById('doctorFields');
+            const adminFields = document.getElementById('adminFields');
+
+            // Show/hide role-specific fields
+            roleSelect.addEventListener('change', function() {
+                // Hide all role fields
+                document.querySelectorAll('.role-fields').forEach(field => {
+                    field.style.display = 'none';
+                });
+
+                // Show relevant fields
+                switch (this.value) {
+                    case 'patient':
+                        patientFields.style.display = 'block';
+                        break;
+                    case 'doctor':
+                        doctorFields.style.display = 'block';
+                        break;
+                    case 'admin':
+                        adminFields.style.display = 'block';
+                        break;
+                }
+            });
+
+            registerForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = registerForm.querySelector('button[type="submit"]');
+                window.uiManager.showLoading(submitBtn, 'Creating account...');
+
+                // Validate passwords match
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (password !== confirmPassword) {
+                    window.uiManager.showError('Passwords do not match');
+                    window.uiManager.hideLoading(submitBtn);
+                    return;
+                }
+
+                // Collect form data
+                const formData = new FormData(registerForm);
+                const registrationData = {
+                    first_name: formData.get('first_name'),
+                    last_name: formData.get('last_name'),
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    role: formData.get('role')
+                };
+
+                // Add role-specific data
+                switch (registrationData.role) {
+                    case 'patient':
+                        registrationData.date_of_birth = formData.get('date_of_birth');
+                        registrationData.emergency_contact = {
+                            name: formData.get('emergency_contact_name'),
+                            phone: formData.get('emergency_contact_phone')
+                        };
+                        break;
+                    case 'doctor':
+                        registrationData.license_number = formData.get('license_number');
+                        registrationData.specialization = formData.get('specialization');
+                        registrationData.department = formData.get('department');
+                        break;
+                    case 'admin':
+                        registrationData.admin_level = parseInt(formData.get('admin_level'));
+                        break;
+                }
+
+                try {
+                    const result = await window.authManager.register(registrationData);
+
+                    if (result.success) {
+                        window.uiManager.showSuccess('Account created successfully! Please sign in.');
+                        setTimeout(() => {
+                            window.location.href = 'login.html';
+                        }, 2000);
+                    } else {
+                        window.uiManager.showError(result.error.message);
+                    }
+                } catch (error) {
+                    window.uiManager.showError('An unexpected error occurred. Please try again.');
+                } finally {
+                    window.uiManager.hideLoading(submitBtn);
+                }
+            });
+
+            // Auto-focus first name field
+            document.getElementById('firstName').focus();
+        });
+    </script>
+</body>
+</html>

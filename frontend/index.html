@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records Management System</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .features {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta {
+            padding: 4rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#" class="navbar-brand">🏥 Medical Records System</a>
+                <div class="navbar-nav">
+                    <a href="pages/login.html" class="btn btn-primary">Login</a>
+                    <a href="pages/register.html" class="btn btn-secondary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Secure Medical Records Management</h1>
+            <p>HIPAA-compliant platform for managing patient medical records with end-to-end encryption</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="pages/register.html" class="btn btn-lg" style="background: white; color: #667eea;">Get Started</a>
+                <a href="pages/login.html" class="btn btn-lg" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">Sign In</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Key Features</h2>
+            <p style="text-align: center; color: #6c757d; margin-bottom: 2rem;">Built with security and compliance in mind</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>End-to-End Encryption</h3>
+                    <p>AES-256 client-side encryption ensures your medical data is always protected, even from us.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Role-Based Access</h3>
+                    <p>Granular permissions for patients, doctors, and administrators with audit logging.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Multi-Factor Authentication</h3>
+                    <p>Additional security layer with TOTP-based two-factor authentication.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>HIPAA Compliant</h3>
+                    <p>Designed to meet healthcare data protection standards and regulations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Audit Trail</h3>
+                    <p>Complete logging of all access and modifications for compliance and security.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Cloud Ready</h3>
+                    <p>Scalable architecture ready for deployment on modern cloud platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p style="color: #6c757d; margin-bottom: 2rem;">Join healthcare providers and patients using our secure platform</p>
+            <a href="pages/register.html" class="btn btn-primary btn-lg">Create Account</a>
+        </div>
+    </section>
+
+    <footer style="background: #2c3e50; color: white; padding: 2rem 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2024 Medical Records Management System. Built with security and privacy in mind.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Redirect authenticated users to their dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.authManager && window.authManager.isAuthenticated()) {
+                const userData = window.authManager.getUserData();
+                if (userData) {
+                    switch (userData.role) {
+                        case 'patient':
+                            window.location.href = 'pages/patient-dashboard.html';
+                            break;
+                        case 'doctor':
+                            window.location.href = 'pages/doctor-dashboard.html';
+                            break;
+                        case 'admin':
+                            window.location.href = 'pages/admin-dashboard.html';
+                            break;
+                    }
+                }
+            }
+        });
+    </script>
+    
+    <script src="js/auth.js"></script>
+</body>
+</html>
